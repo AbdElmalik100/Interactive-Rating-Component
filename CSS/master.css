@@ -1,0 +1,158 @@
+/* Global Rules */
+* {
+    box-sizing: border-box;
+}
+:root {
+    /* Main Color  */
+    --Orange: hsl(25, 97%, 53%);
+
+    /* Second Colors */
+    --White: hsl(0, 0%, 100%);
+    --Light-Grey: hsl(217, 12%, 63%);
+    --Medium-Grey: hsl(216, 12%, 54%);
+    --Dark-Blue: hsl(213, 19%, 18%);
+    --Very-Dark-Blue: hsl(216, 12%, 8%);
+}
+body {
+    font-family: 'Overpass', sans-serif;
+    background-color: var(--Very-Dark-Blue);
+}
+p {
+    font-size: 15px;
+}
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: auto;
+}
+
+/* Grid System */
+@media (min-width: 576px) { /* Small Devices => Landscape Phones */
+    .container {
+        max-width: 540px;
+    }
+}
+@media (min-width: 768px) { /* Medium Devices => Tablets */
+    .container {
+        max-width: 720px;
+    }
+}
+@media (min-width: 992px) { /* Desktops */
+    .container {
+        max-width: 960px;
+    }
+}
+@media (min-width: 1200px) { /* Large Screens */
+    .container {
+        max-width: 1140px;
+    }
+}
+
+.rate-box ,
+.thanks-box{
+    background-color: var(--Dark-Blue);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 30px;
+    width: 400px;
+    border-radius: 20px;
+}
+.rate-box img {
+    background-color: hsl(216deg 12% 8% / 26%);
+    padding: 15px;
+    border-radius: 50%;
+}
+.rate-box .info h1 {
+    color: var(--White);
+    margin-bottom: 0;
+}
+.rate-box .info p {
+    line-height: 1.5;
+    color: var(--Medium-Grey);
+}
+.rate-box .rating {
+    margin: 30px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    column-gap: 22px;
+    row-gap: 10px;
+}
+.rate-box .rating input {
+    display: none;
+}
+.rate-box .rating label {
+    background-color: hsl(216deg 12% 8% / 26%);
+    color: var(--Light-Grey);
+    border-radius: 50%;
+    display: flex;
+    width: 50px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding-top: 5px;
+    transition: 0.5s;
+}
+.rate-box .rating label:hover {
+    background-color: var(--Medium-Grey);
+    color: var(--White);
+}
+.rate-box .rating input:checked + label {
+    background-color: var(--Orange);
+    color: var(--White);
+}
+.rate-box button {
+    background-color: var(--Orange);
+    color: var(--White);
+    border: none;
+    width: 100%;
+    padding: 15px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.rate-box button:hover {
+    background-color: var(--White);
+    color: var(--Orange);
+}
+
+/* Thansk Box */
+.thanks-box {
+    text-align: center;
+    display: none;
+}
+.thanks-box img {
+    margin-top: 10px;
+}
+.thanks-box .state {
+    background-color: hsl(216deg 12% 8% / 26%);
+    padding: 7px 6px 6px;
+    border-radius: 50px;
+    width: 200px;
+    margin: 25px auto 40px;
+    color: var(--Orange);
+    font-size: 15px;
+}
+.thanks-box h1 {
+    color: var(--White);
+}
+.thanks-box p {
+    color: var(--Medium-Grey);
+    line-height: 1.7;
+    margin: 0;
+}
+
+@media (max-width: 575px) {
+    .rate-box ,
+    .thanks-box {
+        width: 360px;
+    }
+    .rate-box .rating {
+        column-gap: 12px;
+    }
+}
